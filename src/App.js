@@ -15,6 +15,7 @@ class App extends Component{
     city: undefined,
     country: undefined,
     humidity: undefined,
+    windspeed: undefined,
     description: undefined,
     error: undefined
   }
@@ -36,6 +37,7 @@ class App extends Component{
         city: undefined,
         country: undefined,
         humidity: undefined,
+        windspeed: undefined,
         description: undefined
       });
       return
@@ -46,6 +48,7 @@ class App extends Component{
       city: data.name,
       country: data.sys.country,
       humidity: data.main.humidity,
+      windspeed: data.wind.speed,
       description: data.weather[0].description,
       error: undefined
     });
@@ -74,6 +77,7 @@ class App extends Component{
                 country = {this.state.country}
                 humidity = {this.state.humidity}
                 description = {this.state.description}
+                windspeed = {this.state.windspeed}
                 error = {this.state.error}
               />
             </div>

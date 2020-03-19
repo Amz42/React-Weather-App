@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Weather extends Component {
     render() {
-        const {temprature,city,country,humidity,description,error} = this.props;
+        const {temprature,city,country,humidity,description,windspeed,error} = this.props;
         let temp = temprature-273;
         temp = temp.toFixed(2);
         let weather_icon;
@@ -29,6 +29,7 @@ class Weather extends Component {
                                 city && country &&
                                 <React.Fragment>
                                     <img className="card-img-top" src={weather_icon} width="100" height="100"/>
+                                    <h6 className="card-text">{description}</h6>
                                     <hr />
                                     <h5 className="card-title">
                                         <i className="fas fa-map-marked-alt"></i>
@@ -41,7 +42,7 @@ class Weather extends Component {
                                     <p className="card-text">
                                         Humidity {humidity} %
                                     </p>
-                                    <p className="card-text">{description}</p>
+                                    <p className="card-text">Windspeed {windspeed} m/s</p>
                                 </React.Fragment>
                             }
                             {
